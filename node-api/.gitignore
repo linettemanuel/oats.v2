@@ -1,0 +1,5 @@
+node_modules/
+credentials/credentials.js
+zprava.js
+logs.json
+.env

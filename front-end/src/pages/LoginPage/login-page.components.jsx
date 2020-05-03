@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import Header from '../../components/Header/header.component';
 import WindowCard from '../../components/WindowCard/window-card.components';
 import CustomInput from '../../components/CustomInput/custom-input.component';
@@ -19,10 +20,20 @@ class LoginPage extends Component {
             () => console.log(this.state))
     }
 
-    handleSubmit = () => (event) => {
+    handleSubmit = (btnName) => (event) => {
         event.preventDefault();
-        console.log('Clicked.')
+        switch (btnName) {
+            case 'Login with Google':
+                break;
+            case 'Basic login':
+                break;    
+            default:
+                console.log('clicked')
+                break;
+        }
     }
+
+    
     
     render() {
         return (
@@ -45,9 +56,9 @@ class LoginPage extends Component {
                     />
                     <div className="buttons-area">
                         <CustomButton
-                        onClick={this.handleSubmit()}>Google+</CustomButton>
+                        onClick={this.handleSubmit('Login with Google')}>Google+</CustomButton>
                         <CustomButton
-                        onClick={this.handleSubmit()}>Login</CustomButton>
+                        onClick={this.handleSubmit('Basic login')}>Login</CustomButton>
                     </div>
                 </WindowCard>
             </div>
